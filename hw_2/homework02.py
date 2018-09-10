@@ -128,7 +128,7 @@ def urlstats(request, key):
     if key in counter_dict:
         return HttpResponse(counter_dict[key])
     else:
-        return HttpResponse('1')
+        return HttpResponse('0')
 
 
 urlpatterns = [
