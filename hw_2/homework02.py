@@ -108,12 +108,12 @@ def redirect_view(request, key):
     django.shortcuts.redirect(redirect_to) или классом-наследником HttpResponse
     """
     if key in cache:
-        return redirect(cache.get(key))
-    else:
         if key in counter_dict:
             counter_dict[key] += 1
         else:
             counter_dict[key] = 1
+        return redirect(cache.get(key))
+    else:
         return redirect('/')
 
 
